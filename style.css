@@ -118,6 +118,7 @@ input {
     padding: 9px 0 9px 0;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 120px;
 }
 
 #tip-custom input {
@@ -125,12 +126,14 @@ box-sizing: border-box;
 width: 100%;
 }
 
-.peopleLabel{
+.peopleLabel,
+.billLabel {
     display: flex;
     justify-content: space-between;
 }
 
-.error {
+.error,
+.error2{
     color:red;
     display: none;
 }
