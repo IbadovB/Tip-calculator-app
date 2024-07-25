@@ -56,7 +56,6 @@ function billInputFun() {
     if (billValue < 0) {
         error2.style.display = 'flex'
         billInput.style.border = 'thick solid red'
-      
     } else {
         error2.style.display = 'none'
         billInput.style.border = 'none'
@@ -70,8 +69,7 @@ function peopleInputFun() {
     if (peopleValue < 1) {
         error.style.display = 'flex'
         peopleInput.style.border = 'thick solid red'
-        return "error"
-      
+
     } else {
         error.style.display = 'none';
         peopleInput.style.border = 'none';
@@ -80,12 +78,12 @@ function peopleInputFun() {
 }
 
 function tipInputFun() {
-    tipValue = parseFloat(tipCustom.value / 100);
-    input > 0;
+    tipValue = parseFloat(tipCustom.value / 100)
     tips.forEach(function (val) {
         val.classList.remove("active-tip");
     });
     calculateTip();
+
 }
 
 function handleClick(event) {
@@ -102,18 +100,17 @@ function handleClick(event) {
 function calculateTip() {
     let tipAmount
     let total;
-    if (peopleValue >= 1) {
+    if (peopleValue > 0 && billValue > 0) {
         tipAmount = (billValue * tipValue) / peopleValue;
         total = (billValue / peopleValue) + tipAmount;
         tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2);
         totalPerPerson.innerHTML = "$" + total.toFixed(2);
+        return
     }
-
-    if (billValue==0) {
-        tipAmount="error"
-        total = "error"
-    }
-
+    tipAmount = "0";
+    total = "0";
+    tipPerPerson.innerHTML = "0";
+    totalPerPerson.innerHTML = "0";
 }
 
 
@@ -124,8 +121,8 @@ if(peopleValue<0 || billValue<0) {
     setError(tipAmount, 'error');
     return;
   }
-
-
+ 
+ 
 }*/
 
 
